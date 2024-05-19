@@ -14,3 +14,5 @@ jobs:
         with:
           gh-token: ${{ secrets.GH_TOKEN }}
           openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          model: ${{ vars.MODEL }}
+          language: ${{ vars.LANGUAGE }}
