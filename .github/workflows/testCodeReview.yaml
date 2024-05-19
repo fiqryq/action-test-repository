@@ -1,9 +1,13 @@
 name: Test code review with openapi
 on:
-  workflow_dispatch:
+  issue_comment:
+    types: [created]
 
 jobs: 
   test_code_review:
+    if: >
+      github.event.issue.pull_request != null &&
+      contains(github.event.comment.body, '/review')
     runs-on: ubuntu-latest
     steps:
       - uses: fiqryq/rebotai@master
