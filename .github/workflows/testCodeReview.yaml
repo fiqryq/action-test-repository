@@ -10,12 +10,6 @@ jobs:
       contains(github.event.comment.body, '/review')
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        
-      - name: Install dependencies
-        run: npm install
-        
       - uses: fiqryq/rebotai@master
         with:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
