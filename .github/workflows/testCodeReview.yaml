@@ -1,0 +1,12 @@
+name: Test code review with openapi
+on:
+  workflow_dispatch:
+
+jobs: 
+  test_code_review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: fiqryq/rebotai@master
+        with:
+          gh-token: ${{ secrets.GH_TOKEN }}
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
